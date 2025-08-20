@@ -3,7 +3,8 @@ const username = document.getElementById("username");
 const password = document.getElementById("password");
 const usernameError = document.getElementById("emailError"); // reused for username
 const passwordError = document.getElementById("passwordError");
-const successMsg = document.getElementById("successMsg");
+const successMsg = document.getElementById("loginSuccessMsg");
+
 
 
 form.addEventListener("submit", (e) => {
@@ -58,17 +59,33 @@ form.addEventListener("submit", (e) => {
 
 
   // Success feedback
-  if (valid) {
-    successMsg.textContent = "Login successful!";
-    successMsg.style.display = "block";
+  // Make sure loginContainer is declared at the top
+  const loginContainer = document.querySelector(".login-container");
+  const successContainer = document.querySelector(".success-container");
+  const successText = document.querySelector(".success-text");
 
-    // Optional: simulate redirect
+  if (valid) {
+    // Show success message
+    successText.textContent = `Welcome, ${username.value}! You are now logged in.`;
+    successContainer.classList.add("show");
+
+    // Fade out login container
+    loginContainer.classList.add("fade-out");
+
+    // Hide login container completely after fade
     setTimeout(() => {
-      successMsg.style.display = "none";
-      alert("Redirecting to dashboard...");
-      // window.location.href = "dashboard.html"; // Uncomment if you have a page
-    }, 1500);
+      loginContainer.style.display = "none";
+    }, 500);
+
+    // Roll-up success message after 2 seconds
+    setTimeout(() => {
+      successContainer.classList.remove("show");
+    }, 2000);
   }
+
+
+
+
 });
 
 // ---------------- REGISTER ----------------

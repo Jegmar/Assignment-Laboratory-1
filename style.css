@@ -264,3 +264,55 @@ input:focus {
     margin-top: 60px;
     margin-bottom: -25px;
 }
+
+/* Fade out effect for login container */
+.login-container {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.login-container.fade-out {
+  opacity: 0;
+  transform: translateY(-20px); /* optional, for a slight upward fade */
+  pointer-events: none; /* prevent interaction */
+}
+
+.success-container {
+  position: fixed;
+  top: -100px; /* start off screen */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: top 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.success-container.show {
+  top: 30px; /* roll down */
+  opacity: 1;
+}
+
+#loginSuccessMsg {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.success-icon {
+  color: green;
+  font-size: 20px;
+}
+
+/* Login fade-out */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+
+

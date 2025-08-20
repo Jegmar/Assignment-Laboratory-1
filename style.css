@@ -5,14 +5,14 @@ body {
   align-items: center;
   height: 100vh;
   margin: 0;
+  
 
-  /* Background image */
   background: url("bg2.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
 .login-container {
-  background: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+  background: rgba(255, 255, 255, 0.2); 
   padding: 2rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
@@ -41,7 +41,7 @@ label {
 input[type="text"], 
 input[type="password"] {
   
-  background: none; /* semi-transparent white */
+  background: none; 
   width: 93%;
   padding: 0.8rem;
   margin-bottom: 1rem;
@@ -165,7 +165,7 @@ input.error {
 }
 
 .username-icon {
-  margin-left: 20px; /* space between icon and input */
+  margin-left: 20px; 
   color: #ffffff;
 }
 
@@ -192,7 +192,7 @@ input.error {
 input[type="Rtext"], 
 input[type="Rpassword"] {
   
-  background: none; /* semi-transparent white */
+  background: none; 
   width: 93%;
   padding: 0.8rem;
   margin-bottom: 1rem;
@@ -272,13 +272,13 @@ input:focus {
 
 .login-container.fade-out {
   opacity: 0;
-  transform: translateY(-20px); /* optional, for a slight upward fade */
-  pointer-events: none; /* prevent interaction */
+  transform: translateY(-20px); 
+  pointer-events: none; 
 }
 
 .success-container {
   position: fixed;
-  top: -100px; /* start off screen */
+  top: -100px; 
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
@@ -314,5 +314,38 @@ input:focus {
   transition: opacity 0.5s ease;
 }
 
+
+/* ------------------------------------------- Register ------------------------------------------ */
+.register-success-container {
+  position: fixed;
+  top: -100px; /* start off-screen */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  transition: top 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+}
+
+.register-success-container.show {
+  top: 20px; /* roll down */
+  opacity: 1;
+}
+
+#registerSuccessMsg {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.register-success-container .success-icon {
+  color: green;
+  font-size: 20px;
+}
 
 

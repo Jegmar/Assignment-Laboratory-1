@@ -6,7 +6,6 @@
   <title>Accessible Login Form</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -59,6 +58,7 @@
       <div class="input-container">
         <input type="Rtext" id="regUsername" class="custom-placeholder" placeholder="Username" required>
       </div>
+      <div id="regUsernameError" class="feedback">Username must be at least 3 characters.</div>
 
       <div class="input-container">
         <input type="Rtext" id="regEmail" class="custom-placeholder" placeholder="Email" required>
@@ -71,6 +71,7 @@
       <div class="input-container">
         <input type="Rpassword" id="confirmPassword" class="custom-placeholder" placeholder="Confirm Password" required>
       </div>
+      <div id="regPasswordError" class="feedback">Passwords do not match.</div>
 
       <div class="regbut">
         <button type="submit">Register</button>
@@ -102,6 +103,15 @@
       <span class="success-text"></span>
     </div>
   </div>
+
+  <!-- Registration success message container -->
+  <div class="register-success-container">
+    <div id="registerSuccessMsg">
+      <i class="fas fa-check-circle success-icon"></i>
+      <span class="success-text"></span>
+    </div>
+  </div>
+
 
 
 

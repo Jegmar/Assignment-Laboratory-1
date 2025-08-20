@@ -1,7 +1,7 @@
 const form = document.getElementById("loginForm");
 const username = document.getElementById("username");
 const password = document.getElementById("password");
-const usernameError = document.getElementById("emailError"); // reused for username
+const usernameError = document.getElementById("emailError"); 
 const passwordError = document.getElementById("passwordError");
 const successMsg = document.getElementById("loginSuccessMsg");
 
@@ -16,7 +16,7 @@ form.addEventListener("submit", (e) => {
     usernameError.textContent = "Please enter your username.";
     usernameError.style.display = "block";
     valid = false;
-  } else if (!/^[a-zA-Z0-9]{3,}$/.test(username.value)) { // only letters, numbers, underscore allowed
+  } else if (!/^[a-zA-Z0-9]{3,}$/.test(username.value)) { 
     usernameError.textContent = "Please enter a valid username.";
     usernameError.style.display = "block";
     username.classList.add("error");
@@ -33,7 +33,6 @@ form.addEventListener("submit", (e) => {
       usernameError.textContent = "Please enter your username.";
       usernameError.style.display = "block";
     } else if (!/^[a-zA-Z0-9]{3,}$/.test(username.value)) {
-      // Invalid username (example: at least 3 characters, alphanumeric + . _ - allowed)
       usernameError.textContent = "Please enter a valid username.";
       usernameError.style.display = "block";
       username.classList.add("error");
@@ -43,8 +42,6 @@ form.addEventListener("submit", (e) => {
       username.classList.remove("error");
     }
   });
-
-
 
   // Password validation (only if username is valid)
   if (valid) {  
@@ -59,7 +56,6 @@ form.addEventListener("submit", (e) => {
 
 
   // Success feedback
-  // Make sure loginContainer is declared at the top
   const loginContainer = document.querySelector(".login-container");
   const successContainer = document.querySelector(".success-container");
   const successText = document.querySelector(".success-text");
@@ -94,29 +90,51 @@ const regUsername = document.getElementById("regUsername");
 const regPassword = document.getElementById("regPassword");
 const regConfirmPassword = document.getElementById("confirmPassword");
 const regMsg = document.getElementById("message");
+const registerSuccessContainer = document.querySelector(".register-success-container");
+const registerSuccessText = document.querySelector("#registerSuccessMsg .success-text");
+
+const regUsernameError = document.getElementById("regUsernameError");
+const regPasswordError = document.getElementById("regPasswordError");
+
 
 registerForm.addEventListener("submit", (e) => {
   e.preventDefault();
   let valid = true;
 
+  // Username validation
   if (!regUsername.value.trim() || regUsername.value.length < 3) {
-    regMsg.textContent = "Username must be at least 3 characters.";
-    regMsg.style.color = "red";
+    regUsernameError.textContent = "Username must be at least 3 characters.";
+    regUsernameError.style.display = "block";
     valid = false;
-  } else if (regPassword.value.length < 6) {
-    regMsg.textContent = "Password must be at least 6 characters.";
-    regMsg.style.color = "red";
-    valid = false;
-  } else if (regPassword.value !== regConfirmPassword.value) {
-    regMsg.textContent = "Passwords do not match.";
-    regMsg.style.color = "red";
-    valid = false;
+  } else {
+    regUsernameError.style.display = "none";
   }
 
+  // Password validation
+  if (regPassword.value.length < 6) {
+    regPasswordError.textContent = "Password must be at least 6 characters.";
+    regPasswordError.style.display = "block";
+    valid = false;
+  } else if (regPassword.value !== regConfirmPassword.value) {
+    regPasswordError.textContent = "Passwords do not match.";
+    regPasswordError.style.display = "block";
+    valid = false;
+  } else {
+    regPasswordError.style.display = "none";
+  }
+
+  // If valid, show registration success
   if (valid) {
-    regMsg.textContent = "Registration successful!";
-    regMsg.style.color = "green";
     registerForm.reset();
+
+    registerSuccessText.textContent = `Account ${regUsername.value} created successfully!`;
+    registerSuccessContainer.classList.add("show");
+
+    setTimeout(() => {
+      registerSuccessContainer.classList.remove("show");
+      registerContainer.style.display = "none";
+      loginContainer.style.display = "block";
+    }, 2000);
   }
 });
 

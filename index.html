@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Login Form</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="login-container" role="form" aria-label="Login Form">
+    <h2>Login</h2>
+
+    <form id="loginForm" novalidate>
+      <!-- Username input with icon -->
+      <div class="input-container">
+        <i class="fa fa-user username-icon"></i>
+        <input type="text" id="username" aria-required="true" placeholder="Username" required>
+      </div>
+      <div id="emailError" class="feedback">Please enter a valid username.</div>
+
+      <!-- Password input -->
+      <div class="input-container">
+        <i class="fa fa-lock password-icon"></i>
+        <input type="password" id="password" aria-required="true" placeholder="Password" required minlength="6">
+      </div>
+      <div id="passwordError" class="feedback">Password incorrect. Please try again.</div>
+
+      <!-- Remember Me + Forgot Password inline -->
+      <div class="form-options">
+        <div class="remember-me">
+          <input type="checkbox" id="rememberMe">
+          <label for="rememberMe">Remember Me</label>
+        </div>
+        <div class="forgot-pass">
+          <a href="#">Forgot Password?</a>
+        </div>
+      </div>
+
+      <button type="Rsubmit">Login</button>
+      <div id="successMsg" class="success">Login successful!</div>
+    </form>
+
+    <!--Register link -->
+    <div class="register-link">
+      <p>Don’t have an account? <a href="#">Register</a></p>
+    </div>
+  </div>
+
+
+
+    <div class="register-container">
+    <div class="create-account">
+        <h2>Create Account</h2>
+    </div>
+    <form id="registerForm">
+      <div class="input-container">
+        <input type="Rtext" id="regUsername" class="custom-placeholder" placeholder="Username" required>
+      </div>
+
+      <div class="input-container">
+        <input type="Rtext" id="regEmail" class="custom-placeholder" placeholder="Email" required>
+      </div>
+
+      <div class="input-container">
+        <input type="Rpassword" id="regPassword" class="custom-placeholder" placeholder="Password" required minlength="6">
+      </div>
+
+      <div class="input-container">
+        <input type="Rpassword" id="confirmPassword" class="custom-placeholder" placeholder="Confirm Password" required>
+      </div>
+
+      <div class="regbut">
+        <button type="submit">Register</button>
+      </div>
+
+      <div class="social-register">
+        <p>Or sign up with</p>
+        <div class="social-buttons">
+            <a href="#" class="social-btn facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-btn google"><i class="fab fa-google"></i></a>
+            <a href="#" class="social-btn twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+      </div>
+
+      <div class="switch-to-login">
+        <p>Already have an account? <a href="#" id="showLogin">Login</a></p>
+      </div>
+
+    </form>
+
+    <div id="message"></div>
+  </div>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>

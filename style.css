@@ -1,0 +1,266 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+  /* Background image */
+  background: url("bg2.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.2); /* semi-transparent white */
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  width: 100%;
+  max-width: 400px;
+
+  /* glassmorphism effect */
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(10px); /* for Safari */
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: white;
+  font-size: 2rem;
+}
+
+label {
+  font-size: 0.9rem;
+  display: block;
+  color: white;
+}
+
+input[type="text"], 
+input[type="password"] {
+  
+  background: none; /* semi-transparent white */
+  width: 93%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid #ccc;
+  border-radius: 100px;
+  font-size: 1rem;
+}
+
+/* Placeholder color */
+input::placeholder {
+  color: white;
+}
+
+
+input:focus {
+  border-color: #ffffff;
+  outline: none;
+}
+
+
+.feedback {
+  border: 1px solid rgb(228, 139, 139);;
+  color: rgb(176, 16, 16);
+  background: #f6c4c4;
+  padding: 0.4rem;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  display: none;
+  border-radius: 12px;
+}
+
+.success {
+  color: green;
+  font-size: 0.9rem;
+  display: none;
+}
+
+button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  border: none;
+  border-radius: 100px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #090909;
+  color: #ffffff;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background-color: rgb(0, 179, 51);
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✔";
+  color: white;
+  font-size: 14px;
+  position: absolute;
+  top: -2px;
+  left: 2px;
+}
+.remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+}
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.forgot-pass a {
+  font-size: 0.9rem;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.forgot-pass a:hover {
+  text-decoration: underline;
+  color: #007BFF;
+}
+.register-link {
+  color: #ffffff;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.register-link a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+  color: #007BFF;
+}
+
+
+input.error {
+  border: 1.5px solid rgb(153, 6, 6) !important;
+}
+
+.username-icon {
+  margin-left: 20px; /* space between icon and input */
+  color: #ffffff;
+}
+
+.password-icon {
+  margin-left: 20px;
+  color: #ffffff;
+}
+
+/* ------------------------------------------ Register ------------------------------------------ */
+
+.register-container {
+  background: #eaeaea;
+  border: 1px solid black;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  width: 375px;
+  text-align: center;
+}
+.create-account h2{
+    color: rgb(53, 51, 51);
+    font-weight: bold;
+}
+input[type="Rtext"], 
+input[type="Rpassword"] {
+  
+  background: none; /* semi-transparent white */
+  width: 93%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1.5px solid #5b5b5b;
+  border-radius: 100px;
+  font-size: 1rem;
+  margin-top: 5px;
+}
+
+/* Placeholder color */
+.custom-placeholder::placeholder {
+  color: #303030;
+}
+
+
+input:focus {
+  border-color: #000000;
+  outline: none;
+}
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-buttons a {
+  font-size: 22px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: rgb(255, 255, 255);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-btn.facebook { background: #3b5998; } /* Facebook Blue */
+.social-btn.google { background: #db4437; }   /* Google Red */
+.social-btn.twitter { background: #1da1f2; }  /* Twitter Blue */
+
+.social-buttons a:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+  
+}
+
+.regbut button {
+  width: 100%;
+  padding: 0.8rem;
+  background: #b5b5b5;
+  color: rgb(0, 0, 0);
+  border: black 1px solid;
+  border-radius: 100px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 5px;
+}
+
+.regbut button:hover {
+  background: #090909;
+  color: #ffffff;
+}
+
+.switch-to-login {
+    margin-top: 60px;
+    margin-bottom: -25px;
+}
